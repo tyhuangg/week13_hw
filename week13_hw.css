@@ -1,0 +1,41 @@
+div{
+	font-family: fantasy;
+}
+
+h2{
+	font-family: sans-serif;
+	background-color: #C39BD3;
+}
+
+.font{
+	font-family: cursive;
+}
+
+.area{
+	background-color: #FA8072;
+	border: 150px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.button{
+	background-color: #CCCCFF;
+	/*font: cursive;
+	border-radius: 2px;*/
+}
+.button:hover{
+	background-color: #6495ED;
+}
+#table th{
+	border: white;
+  	background-color: #9FE2BF;
+}
+#table td{
+	border: white;
+	width: 10px;
+	background-color: #40E0D0;
+}
+
+
+
+

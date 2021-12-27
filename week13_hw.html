@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NumGuessingGame</title>
+
+	<link rel ="stylesheet" type="text/css" href ="style_of_numguessinggame.css">
+
+</head>
+
+<body>
+	<div id="area" class="area" class="font" align="center" >
+		<h2><i>Guessing Game</i></h2>
+		<form>
+			<label>Your Guess (1~100)</label><p>
+			<input type="text" id="number">
+		</form>
+		<button value="play" id="button" class="button" onclick="calculate()">Play</button><p>
+		<table id="table" >
+			<tr>
+				<th>Result</th>
+			</tr>
+		</table>
+	</div>
+
+	<!-- <button onClick="window.location.reload();" id = "tryagain" style="display:none;">Play again!</button> -->
+
+	<script type="text/javascript">
+		
+		var ans = Math.floor(Math.random()*100+1);
+		var max = 100;
+		var min = 1;
+		
+		function calculate(){
+			input = document.getElementById("number").value;
+			inputInt = parseInt(input);
+
+			if(inputInt == ans){
+				alert("Correct answer!");
+				location.reload();
+				
+			}
+
+			while(inputInt != ans){
+				
+				if(inputInt < ans){
+					if(inputInt > min){
+						min = inputInt;
+					}
+					var tr = document.createElement("tr");
+					var td = document.createElement("td");
+					var text = document.createTextNode(min + "~" + max);
+
+					td.appendChild(text);
+					tr.appendChild(td);
+
+					document.getElementById("table").appendChild(tr);
+					document.getElementById("number").value = "";
+					break;
+			}
+				
+				if(inputInt > ans){
+					if(inputInt < max){
+						max = input;
+					}
+					var tr = document.createElement("tr");
+					var td = document.createElement("td");
+					var text = document.createTextNode(min + "~" + max);
+
+					td.appendChild(text);
+					tr.appendChild(td);
+
+					document.getElementById("table").appendChild(tr);
+					document.getElementById("number").value = "";
+					break;
+				}		
+			}
+		}
+	</script>
+
+</body>
+</html>
